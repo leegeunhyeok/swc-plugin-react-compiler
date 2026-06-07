@@ -1,0 +1,11 @@
+{
+  "$schema": "./.yarn/unplugged/oxfmt-virtual-daa6b03c56/node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 80,
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": true,
+  "bracketSpacing": true,
+  "trailingComma": "all",
+  "arrowParens": "always",
+  "ignorePatterns": [".yarn/**", "target/**"]
+}

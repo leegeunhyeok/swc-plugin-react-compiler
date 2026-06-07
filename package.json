@@ -1,0 +1,35 @@
+{
+  "name": "swc-plugin-react-compiler",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "example"
+  ],
+  "type": "module",
+  "scripts": {
+    "build": "mise exec -- just build",
+    "build:wasm": "mise exec -- just build-wasm",
+    "check": "mise exec -- just check",
+    "example": "mise exec -- just example",
+    "format": "mise exec -- just format",
+    "format:check": "mise exec -- just format-check",
+    "lint": "mise exec -- just lint",
+    "test": "mise exec -- just test",
+    "typecheck": "mise exec -- just typecheck"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.2",
+    "oxfmt": "^0.54.0",
+    "oxlint": "^1.69.0",
+    "typescript": "^6.0.3"
+  },
+  "dependenciesMeta": {
+    "oxfmt": {
+      "unplugged": true
+    },
+    "oxlint": {
+      "unplugged": true
+    }
+  },
+  "packageManager": "yarn@4.16.0"
+}

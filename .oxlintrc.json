@@ -1,0 +1,13 @@
+{
+  "$schema": "./.yarn/unplugged/oxlint-virtual-a4198ce602/node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "oxc"],
+  "categories": {
+    "correctness": "error"
+  },
+  "rules": {},
+  "env": {
+    "builtin": true,
+    "node": true
+  },
+  "ignorePatterns": [".yarn/**", "target/**"]
+}

@@ -1,0 +1,12 @@
+[workspace]
+members = ["crates/swc-plugin-react-compiler"]
+resolver = "2"
+
+[workspace.package]
+version = "0.0.0"
+edition = "2021"
+rust-version = "1.96"
+license = "MIT"
+
+[workspace.dependencies]
+swc_core = { version = "68.0.5", features = ["ecma_plugin_transform"] }
