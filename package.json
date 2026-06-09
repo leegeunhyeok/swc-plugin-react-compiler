@@ -1,6 +1,7 @@
 {
   "name": "swc-plugin-react-compiler",
   "version": "0.0.0",
+  "description": "SWC plugin for the Rust React Compiler port",
   "workspaces": [
     "example"
   ],
