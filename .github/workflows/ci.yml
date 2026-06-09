@@ -1,0 +1,77 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      dev:
+        description: Publish a dev version of the package to NPM
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Tools
+        uses: jdx/mise-action@v4
+
+      - name: Setup workspace
+        run: just setup
+
+      - name: Check
+        run: just check
+
+  npm-publish:
+    name: NPM Publish
+    runs-on: ubuntu-latest
+    needs: check
+    if: (github.event_name == 'workflow_dispatch' && inputs.dev) || (github.event_name == 'push' && startsWith(github.event.head_commit.message, 'chore(release):'))
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Tools
+        uses: jdx/mise-action@v4
+
+      - name: Setup workspace
+        run: just setup
+
+      - name: Build
+        run: just build
+
+      - name: Setup npm
+        run: |
+          npm install -g npm@latest
+          npm --version
+
+      - name: Set dev version
+        if: github.event_name == 'workflow_dispatch' && inputs.dev
+        run: |
+          timestamp="$(date -u +%Y%m%d%H%M%S)"
+          yarn version "0.0.0-dev.${timestamp}" --immediate
+          yarn node -p "require('./package.json').version"
+
+      - name: Publish
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            npm publish --access public --tag dev
+          else
+            npm publish --access public
+          fi

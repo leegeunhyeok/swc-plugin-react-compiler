@@ -2,6 +2,15 @@
   "name": "swc-plugin-react-compiler",
   "version": "0.0.0",
   "description": "SWC plugin for the Rust React Compiler port",
+  "homepage": "https://github.com/leegeunhyeok/swc-plugin-react-compiler#readme",
+  "bugs": {
+    "url": "https://github.com/leegeunhyeok/swc-plugin-react-compiler/issues"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leegeunhyeok/swc-plugin-react-compiler.git"
+  },
   "workspaces": [
     "example"
   ],
@@ -20,6 +29,10 @@
       "types": "./src/index.d.ts"
     },
     "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   },
   "scripts": {
     "build": "mise exec -- just build",

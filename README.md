@@ -106,7 +106,7 @@ npm run check
 Run the Vite example in development mode:
 
 ```sh
-mise exec -- just example-dev
+mise exec -- just example
 ```
 
 The dev server serves the TODO example at `http://127.0.0.1:5173/`.
@@ -118,10 +118,9 @@ The `justfile` defines the main development tasks:
 ```sh
 just build        # Build the Wasm plugin and copy it to the package root
 just check        # cargo check, typecheck, oxlint, and oxfmt
-just test         # Rust tests
-just example      # Build the Vite TODO example
-just example-dev  # Run the Vite TODO example locally
 just format       # Apply oxfmt
+just test         # Rust tests
+just example      # Run the Vite TODO example locally
 ```
 
 ## License

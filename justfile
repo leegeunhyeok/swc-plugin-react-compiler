@@ -40,10 +40,12 @@ test: rust-test
 rust-test:
     cargo test --workspace
 
-example: build-wasm
-    yarn workspace swc-plugin-react-compiler-example run build
+version version:
+    test -z "$(git status --porcelain)"
+    yarn version "{{version}}" --immediate
+    git commit package.json -m "chore(release): {{version}}"
 
-example-dev: build-wasm
+example: build-wasm
     yarn workspace swc-plugin-react-compiler-example run dev
 
 clean:
