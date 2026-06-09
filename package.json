@@ -5,10 +5,24 @@
   "workspaces": [
     "example"
   ],
+  "files": [
+    "./src",
+    "./swc_plugin_react_compiler.wasm"
+  ],
   "type": "module",
+  "main": "src/index.cjs",
+  "module": "src/index.js",
+  "types": "src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "require": "./src/index.cjs",
+      "types": "./src/index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "build": "mise exec -- just build",
-    "build:wasm": "mise exec -- just build-wasm",
     "check": "mise exec -- just check",
     "example": "mise exec -- just example",
     "format": "mise exec -- just format",

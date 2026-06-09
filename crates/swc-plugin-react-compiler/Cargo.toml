@@ -10,4 +10,7 @@ publish = false
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
+react_compiler = { workspace = true }
+react_compiler_swc = { workspace = true }
+serde_json = { workspace = true }
 swc_core = { workspace = true }

@@ -9,4 +9,10 @@ rust-version = "1.96"
 license = "MIT"
 
 [workspace.dependencies]
-swc_core = { version = "68.0.5", features = ["ecma_plugin_transform"] }
+react_compiler = { git = "https://github.com/facebook/react.git", rev = "d9001e5e85b4a2aa7808c90bcaf3725de989ecaf" }
+react_compiler_swc = { git = "https://github.com/facebook/react.git", rev = "d9001e5e85b4a2aa7808c90bcaf3725de989ecaf" }
+serde_json = "1"
+swc_core = { version = "=60.0.0", features = [
+  "ecma_parser_typescript",
+  "ecma_plugin_transform",
+] }

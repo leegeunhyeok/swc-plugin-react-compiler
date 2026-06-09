@@ -398,6 +398,7 @@ checksum = "9ed9a281f7bc9b7576e61468ba615a66a5c8cfdff42420a70aa82701a3b1e292"
 dependencies = [
  "block-buffer",
  "crypto-common",
+ "subtle",
 ]
 
 [[package]]
@@ -583,6 +584,15 @@ name = "hex"
 version = "0.4.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70"
+
+[[package]]
+name = "hmac"
+version = "0.12.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6c49c37c09c17a53d937dfbb742eb3a961d65a994e6bcdcf37e7399d0cc8ab5e"
+dependencies = [
+ "digest",
+]
 
 [[package]]
 name = "hstr"
@@ -1145,6 +1155,167 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ec0be4795e2f6a28069bec0b5ff3e2ac9bafc99e6a9a7dc3547996c5c816922c"
 
 [[package]]
+name = "react_compiler"
+version = "0.1.0"
+source = "git+https://github.com/facebook/react.git?rev=d9001e5e85b4a2aa7808c90bcaf3725de989ecaf#d9001e5e85b4a2aa7808c90bcaf3725de989ecaf"
+dependencies = [
+ "indexmap",
+ "react_compiler_ast",
+ "react_compiler_diagnostics",
+ "react_compiler_hir",
+ "react_compiler_inference",
+ "react_compiler_lowering",
+ "react_compiler_optimization",
+ "react_compiler_reactive_scopes",
+ "react_compiler_ssa",
+ "react_compiler_typeinference",
+ "react_compiler_validation",
+ "regex",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
+name = "react_compiler_ast"
+version = "0.1.0"
+source = "git+https://github.com/facebook/react.git?rev=d9001e5e85b4a2aa7808c90bcaf3725de989ecaf#d9001e5e85b4a2aa7808c90bcaf3725de989ecaf"
+dependencies = [
+ "indexmap",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
+name = "react_compiler_diagnostics"
+version = "0.1.0"
+source = "git+https://github.com/facebook/react.git?rev=d9001e5e85b4a2aa7808c90bcaf3725de989ecaf#d9001e5e85b4a2aa7808c90bcaf3725de989ecaf"
+dependencies = [
+ "serde",
+]
+
+[[package]]
+name = "react_compiler_hir"
+version = "0.1.0"
+source = "git+https://github.com/facebook/react.git?rev=d9001e5e85b4a2aa7808c90bcaf3725de989ecaf#d9001e5e85b4a2aa7808c90bcaf3725de989ecaf"
+dependencies = [
+ "indexmap",
+ "react_compiler_diagnostics",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
+name = "react_compiler_inference"
+version = "0.1.0"
+source = "git+https://github.com/facebook/react.git?rev=d9001e5e85b4a2aa7808c90bcaf3725de989ecaf#d9001e5e85b4a2aa7808c90bcaf3725de989ecaf"
+dependencies = [
+ "indexmap",
+ "react_compiler_diagnostics",
+ "react_compiler_hir",
+ "react_compiler_lowering",
+ "react_compiler_optimization",
+ "react_compiler_ssa",
+ "react_compiler_utils",
+]
+
+[[package]]
+name = "react_compiler_lowering"
+version = "0.1.0"
+source = "git+https://github.com/facebook/react.git?rev=d9001e5e85b4a2aa7808c90bcaf3725de989ecaf#d9001e5e85b4a2aa7808c90bcaf3725de989ecaf"
+dependencies = [
+ "indexmap",
+ "react_compiler_ast",
+ "react_compiler_diagnostics",
+ "react_compiler_hir",
+ "serde_json",
+]
+
+[[package]]
+name = "react_compiler_optimization"
+version = "0.1.0"
+source = "git+https://github.com/facebook/react.git?rev=d9001e5e85b4a2aa7808c90bcaf3725de989ecaf#d9001e5e85b4a2aa7808c90bcaf3725de989ecaf"
+dependencies = [
+ "indexmap",
+ "react_compiler_diagnostics",
+ "react_compiler_hir",
+ "react_compiler_lowering",
+ "react_compiler_ssa",
+]
+
+[[package]]
+name = "react_compiler_reactive_scopes"
+version = "0.1.0"
+source = "git+https://github.com/facebook/react.git?rev=d9001e5e85b4a2aa7808c90bcaf3725de989ecaf#d9001e5e85b4a2aa7808c90bcaf3725de989ecaf"
+dependencies = [
+ "hmac",
+ "indexmap",
+ "react_compiler_ast",
+ "react_compiler_diagnostics",
+ "react_compiler_hir",
+ "serde_json",
+ "sha2",
+]
+
+[[package]]
+name = "react_compiler_ssa"
+version = "0.1.0"
+source = "git+https://github.com/facebook/react.git?rev=d9001e5e85b4a2aa7808c90bcaf3725de989ecaf#d9001e5e85b4a2aa7808c90bcaf3725de989ecaf"
+dependencies = [
+ "indexmap",
+ "react_compiler_diagnostics",
+ "react_compiler_hir",
+ "react_compiler_lowering",
+]
+
+[[package]]
+name = "react_compiler_swc"
+version = "0.1.0"
+source = "git+https://github.com/facebook/react.git?rev=d9001e5e85b4a2aa7808c90bcaf3725de989ecaf#d9001e5e85b4a2aa7808c90bcaf3725de989ecaf"
+dependencies = [
+ "indexmap",
+ "react_compiler",
+ "react_compiler_ast",
+ "react_compiler_diagnostics",
+ "react_compiler_hir",
+ "serde",
+ "serde_json",
+ "swc_atoms",
+ "swc_common",
+ "swc_ecma_ast",
+ "swc_ecma_codegen",
+ "swc_ecma_parser 35.0.0",
+ "swc_ecma_visit",
+]
+
+[[package]]
+name = "react_compiler_typeinference"
+version = "0.1.0"
+source = "git+https://github.com/facebook/react.git?rev=d9001e5e85b4a2aa7808c90bcaf3725de989ecaf#d9001e5e85b4a2aa7808c90bcaf3725de989ecaf"
+dependencies = [
+ "react_compiler_diagnostics",
+ "react_compiler_hir",
+ "react_compiler_ssa",
+]
+
+[[package]]
+name = "react_compiler_utils"
+version = "0.1.0"
+source = "git+https://github.com/facebook/react.git?rev=d9001e5e85b4a2aa7808c90bcaf3725de989ecaf#d9001e5e85b4a2aa7808c90bcaf3725de989ecaf"
+dependencies = [
+ "indexmap",
+]
+
+[[package]]
+name = "react_compiler_validation"
+version = "0.1.0"
+source = "git+https://github.com/facebook/react.git?rev=d9001e5e85b4a2aa7808c90bcaf3725de989ecaf#d9001e5e85b4a2aa7808c90bcaf3725de989ecaf"
+dependencies = [
+ "indexmap",
+ "react_compiler_diagnostics",
+ "react_compiler_hir",
+]
+
+[[package]]
 name = "redox_syscall"
 version = "0.5.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1439,9 +1610,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7da8b5736845d9f2fcb837ea5d9e2628564b3b043a70948a3f0b778838c5fb4f"
 
 [[package]]
+name = "subtle"
+version = "2.6.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "13c2bddecc57b384dee18652358fb23172facb8a2c51ccc10d74c157bdea3292"
+
+[[package]]
 name = "swc-plugin-react-compiler"
 version = "0.0.0"
 dependencies = [
+ "react_compiler",
+ "react_compiler_swc",
+ "serde_json",
  "swc_core",
 ]
 
@@ -1474,9 +1654,9 @@ dependencies = [
 
 [[package]]
 name = "swc_common"
-version = "23.0.1"
+version = "19.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "353daaf5e6c2ad90efd4ff52270173074ded88fdba5a40f302c7c3a9b1c037fb"
+checksum = "623a4ee8bb19d87de6fc781e44e1696af20136d1c1eabf9f3712ff1fb50b6189"
 dependencies = [
  "anyhow",
  "ast_node",
@@ -1506,14 +1686,15 @@ dependencies = [
 
 [[package]]
 name = "swc_core"
-version = "68.0.5"
+version = "60.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "50f5e74b394d26f24d080752bc439fc571d7c91a4f1ad57c7a3900970e7254fc"
+checksum = "7eeb24db3d951eef14863a7cbaf3174d17dadd3dc8efa7863a05c435c2c589dc"
 dependencies = [
  "swc_allocator",
  "swc_atoms",
  "swc_common",
  "swc_ecma_ast",
+ "swc_ecma_parser 36.0.0",
  "swc_ecma_transforms_base",
  "swc_ecma_transforms_testing",
  "swc_ecma_visit",
@@ -1526,9 +1707,9 @@ dependencies = [
 
 [[package]]
 name = "swc_ecma_ast"
-version = "25.0.0"
+version = "21.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a207e09f23885ff1f4354ebfdd4e715ccd4a68fca2e7e0df09baafbca850762e"
+checksum = "27111582629a1cc116f9cffa6bfa501e6c849e0e66fafdf78cd404dce919117d"
 dependencies = [
  "bitflags",
  "cbor4ii",
@@ -1546,9 +1727,9 @@ dependencies = [
 
 [[package]]
 name = "swc_ecma_codegen"
-version = "28.0.0"
+version = "24.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b560623690970aeae3446dda6a7074d07df48a60c3eaf159d087d8f5bd8f437c"
+checksum = "50b8dbdc2be434883934cda8c3f6638130390032c44e1952e543252fcafd67e0"
 dependencies = [
  "ascii",
  "compact_str",
@@ -1580,9 +1761,30 @@ dependencies = [
 
 [[package]]
 name = "swc_ecma_parser"
-version = "41.0.0"
+version = "35.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "303c2e32df97d5d4f2f3fc35dab367ff676668786a0d3ad496cefb0357b0bbb1"
+checksum = "943b8743c57783b35b6c173b0a8ef539a6c1d06ee5d1588b2821992c3fd35f39"
+dependencies = [
+ "bitflags",
+ "either",
+ "num-bigint",
+ "phf",
+ "rustc-hash",
+ "seq-macro",
+ "serde",
+ "smartstring",
+ "stacker",
+ "swc_atoms",
+ "swc_common",
+ "swc_ecma_ast",
+ "tracing",
+]
+
+[[package]]
+name = "swc_ecma_parser"
+version = "36.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0c4c7846e4c9ee7bb52e1958b5fe7a924088451cf699e01e7203d6f5210b055e"
 dependencies = [
  "bitflags",
  "either",
@@ -1601,9 +1803,9 @@ dependencies = [
 
 [[package]]
 name = "swc_ecma_testing"
-version = "24.0.0"
+version = "20.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fb1f6d48585817a147a03e6a13dda44c738829bf14e842cbdff1df1ff3f0a224"
+checksum = "40134d12eabe326a97d10b19dfacf98fdc92d93e9c78008948d2992f6d3767b9"
 dependencies = [
  "anyhow",
  "hex",
@@ -1614,9 +1816,9 @@ dependencies = [
 
 [[package]]
 name = "swc_ecma_transforms_base"
-version = "44.0.1"
+version = "39.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "caa49dce90ef0c68177e3515f7ecf93db32a96182c9f9264f1ee4193c17aef3b"
+checksum = "5d4fb6ec9ec1d782104996b86119fb775c08073ce4ace8e90b3c27b75b1c0812"
 dependencies = [
  "better_scoped_tls",
  "indexmap",
@@ -1628,7 +1830,7 @@ dependencies = [
  "swc_atoms",
  "swc_common",
  "swc_ecma_ast",
- "swc_ecma_parser",
+ "swc_ecma_parser 36.0.0",
  "swc_ecma_utils",
  "swc_ecma_visit",
  "tracing",
@@ -1636,9 +1838,9 @@ dependencies = [
 
 [[package]]
 name = "swc_ecma_transforms_testing"
-version = "48.0.0"
+version = "43.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c379048fcf003e4afcefec58753f358992c622ab35b2fd075d7639cfc7c53e79"
+checksum = "23f627645ba3e1733b9d596ec7c5e7005da05965383869244cd2468add62ca26"
 dependencies = [
  "ansi_term",
  "anyhow",
@@ -1650,7 +1852,7 @@ dependencies = [
  "swc_common",
  "swc_ecma_ast",
  "swc_ecma_codegen",
- "swc_ecma_parser",
+ "swc_ecma_parser 36.0.0",
  "swc_ecma_testing",
  "swc_ecma_transforms_base",
  "swc_ecma_utils",
@@ -1662,9 +1864,9 @@ dependencies = [
 
 [[package]]
 name = "swc_ecma_utils"
-version = "31.0.0"
+version = "27.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "75c73aa067af98882109f4314adb40ec9f14d5c3607fc56de2a6cc7b9d1933af"
+checksum = "5c91e3ed13767ac74670e9cc9895d8c3502a9086fe69fe8a23295da08e6f7e02"
 dependencies = [
  "dragonbox_ecma",
  "indexmap",
@@ -1681,9 +1883,9 @@ dependencies = [
 
 [[package]]
 name = "swc_ecma_visit"
-version = "25.0.0"
+version = "21.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1f9cb1e958e57fa6427c106674a12190c4578684beee783e3a0508f048d1b372"
+checksum = "7c1b3a04c999c14f09d81c959f8a84f71d594f2ad2456470eb38d78532e82dda"
 dependencies = [
  "new_debug_unreachable",
  "num-bigint",
@@ -1707,9 +1909,9 @@ dependencies = [
 
 [[package]]
 name = "swc_error_reporters"
-version = "25.0.0"
+version = "21.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ac58facadaaf3cc9084503feaa5adb6299f12332a5f82045086fedc006f2b9ed"
+checksum = "2bce8f4474b6f874cc49d745b41d610342a3ea0e1dc57dbc4bf223162b196e7a"
 dependencies = [
  "anyhow",
  "miette",
@@ -1751,9 +1953,9 @@ dependencies = [
 
 [[package]]
 name = "swc_plugin_proxy"
-version = "25.0.0"
+version = "21.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fb049cf46ca31ecfb8cf15b82032d4d7cc46480481d82540a1a65ebcefba1169"
+checksum = "fa426e25a63f653fd7efb19f5c684057e66572773ebbd176e8be38f3b7378e75"
 dependencies = [
  "better_scoped_tls",
  "cbor4ii",
@@ -1795,9 +1997,9 @@ dependencies = [
 
 [[package]]
 name = "swc_transform_common"
-version = "17.0.0"
+version = "13.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1b4f1334cb6c6642de10080d9be47180f3536946968ee6f8ae8d0c2760111354"
+checksum = "1874cae422d398137e9b7cb39ceb2d91068342ca152ab3137709dbc175cc965f"
 dependencies = [
  "better_scoped_tls",
  "rustc-hash",
@@ -1867,9 +2069,9 @@ dependencies = [
 
 [[package]]
 name = "testing"
-version = "24.0.0"
+version = "20.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3164a9d6b9d1fcbf4be8f3c0bb3f53dcdc4ab46b3ceae0c9e34e18c9dbf6ef31"
+checksum = "137ed830e8e9c80b84a2579039ab340f5bf3f1aa1c72e5e41d38fafef2c9d21d"
 dependencies = [
  "cargo_metadata 0.18.1",
  "difference",

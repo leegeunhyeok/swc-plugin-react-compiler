@@ -16,6 +16,7 @@ build: build-wasm
 
 build-wasm:
     cargo build -p swc-plugin-react-compiler --target wasm32-wasip1 --release
+    cp target/wasm32-wasip1/release/swc_plugin_react_compiler.wasm .
 
 check: rust-check typecheck lint fmt-check
 
@@ -40,7 +41,10 @@ rust-test:
     cargo test --workspace
 
 example: build-wasm
-    yarn workspace swc-plugin-react-compiler-example run start
+    yarn workspace swc-plugin-react-compiler-example run build
+
+example-dev: build-wasm
+    yarn workspace swc-plugin-react-compiler-example run dev
 
 clean:
     cargo clean
