@@ -7,6 +7,19 @@
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "oxc.path.oxfmt": ".yarn/sdks/oxfmt/bin/oxfmt",
   "oxc.path.oxlint": ".yarn/sdks/oxlint/bin/oxlint",
+  "rust-analyzer.check.overrideCommand": [
+    "mise",
+    "exec",
+    "--",
+    "cargo",
+    "check",
+    "--workspace",
+    "--message-format=json-diagnostic-rendered-ansi",
+    "--manifest-path",
+    "Cargo.toml",
+    "--keep-going",
+    "--all-targets"
+  ],
   "editor.defaultFormatter": "oxc.oxc-vscode",
   "[typescript]": {
     "editor.defaultFormatter": "oxc.oxc-vscode"
