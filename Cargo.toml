@@ -9,8 +9,8 @@ rust-version = "1.96"
 license = "MIT"
 
 [workspace.dependencies]
-react_compiler = { git = "https://github.com/facebook/react.git", rev = "d9001e5e85b4a2aa7808c90bcaf3725de989ecaf" }
-react_compiler_swc = { git = "https://github.com/facebook/react.git", rev = "d9001e5e85b4a2aa7808c90bcaf3725de989ecaf" }
+react_compiler = { git = "https://github.com/facebook/react.git", rev = "b49e04151e1c2cd34f4612e43c5e38edf5da56e2" }
+react_compiler_swc = { git = "https://github.com/facebook/react.git", rev = "b49e04151e1c2cd34f4612e43c5e38edf5da56e2" }
 serde_json = "1"
 swc_core = { version = "=60.0.0", features = [
   "ecma_parser_typescript",
